@@ -1,3 +1,5 @@
+const { assert } = require("chai");
+
 require("chai")
     .use(require("chai-as-promised"))
     .should()
@@ -14,8 +16,10 @@ contract('NFT', ([account1])=>{
             contract = await NftContract.deployed()
             
             const contractAddress = contract.address 
-            contractAddress.should.not.equal(account1)
-            contractAddress.should.not.equal('')
+            //contractAddress.should.not.equal(account1)
+            //contractAddress.should.not.equal('')
+
+            assert.notEqual(contractAddress, '')
            
         })
     })
