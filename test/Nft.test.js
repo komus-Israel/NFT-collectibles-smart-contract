@@ -5,11 +5,18 @@ require("chai")
 const NftContract = artifacts.require("./NFT.sol")
 
 
-Contract('NFT', (accounts)=>{
+contract('NFT', ([account1])=>{
+
+    let contract;
     describe("deployent", ()=>{
 
         it("deploys successfully", async()=>{
-            console.log("successful")
+            contract = await NftContract.deployed()
+            
+            const contractAddress = contract.address 
+            contractAddress.should.not.equal(account1)
+            contractAddress.should.not.equal('')
+           
         })
     })
 })
