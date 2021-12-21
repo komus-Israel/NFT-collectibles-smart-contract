@@ -30,10 +30,10 @@ contract('NFT', ([account1])=>{
            
         })
 
-       /* it("has a name", async()=>{
-            const nftName = contract.name()
-            nftName.should.not.equal('')
-        })*/
+        it("has a name", async()=>{
+                const nftName = contract.name()
+                nftName.should.not.equal('')
+        })
     })
 
     
