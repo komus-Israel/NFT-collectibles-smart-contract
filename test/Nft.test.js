@@ -36,6 +36,13 @@ contract('NFT', ([account1])=>{
                 nftName.should.be.equal('AfroKits')
                 
         })
+
+        it("has a symbol", async()=>{
+            const nftSymbol = await contract.symbol()
+            nftSymbol.should.not.equal('')
+            nftSymbol.should.be.equal('AFTK')
+
+        })
     })
 
     
